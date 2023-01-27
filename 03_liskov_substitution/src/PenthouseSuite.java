@@ -6,4 +6,8 @@ public final class PenthouseSuite extends Apartment {
     public void setSquareFootage(int sqft) {
         this.squareFootage = sqft;
     }
+
+    public void upgradeBedrooms() {
+        this.numberOfBedrooms++;
+    }
 }

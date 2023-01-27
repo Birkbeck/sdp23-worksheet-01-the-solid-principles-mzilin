@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board {
+public class Board implements Display {
     List<String> spots;
 
     public Board() {
@@ -35,7 +35,7 @@ public class Board {
         return thirdRow;
     }
 
-    // Poor code — can you improve this?
+    @Override
     public void display() {
         String formattedFirstRow = this.spots.get(0) + " | " + this.spots.get(1) + " | " + this.spots.get(2) + "\n"
             + this.spots.get(3) + " | " + this.spots.get(4) + " | " + this.spots.get(5) + "\n"

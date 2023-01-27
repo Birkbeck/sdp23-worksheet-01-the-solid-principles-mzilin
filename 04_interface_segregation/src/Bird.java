@@ -1,5 +1,7 @@
 public interface Bird {
-    public void fly();
+    void molt();
 
-    public void molt();
+    default void fly() {
+        throw new UnsupportedOperationException();
+    }
 }
