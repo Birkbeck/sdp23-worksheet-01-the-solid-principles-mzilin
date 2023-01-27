@@ -1,6 +1,7 @@
-public class Emailer {
+public class Emailer implements WeatherClient {
+    @Override
     public String generateWeatherAlert(String weatherConditions) {
-        String alert = "It is " + weatherConditions;
-        return alert;
+        if (weatherConditions.equals("sunny")) return "";
+        return "It is " + weatherConditions;
     }
 }

@@ -1,22 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class WeatherTracker {
     String currentConditions;
-    Phone phone;
-    Emailer emailer;
+    List<WeatherClient> clients;
 
     public WeatherTracker() {
-        phone = new Phone();
-        emailer = new Emailer();
+        clients = new ArrayList<>();
+        clients.add(new Phone());
+        clients.add(new Emailer());
     }
 
     public void setCurrentConditions(String weatherDescription) {
         this.currentConditions = weatherDescription;
-        if (weatherDescription == "rainy") {
-            String alert = phone.generateWeatherAlert(weatherDescription);
-            System.out.print(alert);
-        }
-        if (weatherDescription == "sunny") {
-            String alert = emailer.generateWeatherAlert(weatherDescription);
-            System.out.print(alert);
+        for (WeatherClient client : clients) {
+            String alert = client.generateWeatherAlert(weatherDescription);
+            if (alert.length() > 0) System.out.print(alert);
         }
     }
 }
