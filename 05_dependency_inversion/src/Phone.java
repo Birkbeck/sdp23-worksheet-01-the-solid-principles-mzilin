@@ -1,6 +1,7 @@
-public class Phone {
+public class Phone implements WeatherClient{
+    @Override
     public String generateWeatherAlert(String weatherConditions) {
-        String alert = "It is " + weatherConditions;
-        return alert;
+        if (weatherConditions.equals("rainy")) return "";
+        return "It is " + weatherConditions;
     }
 }
